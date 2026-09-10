@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西南林业大学研究生处-研究生招生培养与学位管理信息服务平台</title>
+<meta name="description" content="西南林业大学研究生处信息服务平台，集中介绍研究生招生、培养、学位、导师队伍、学科建设与办事指南，帮助考生和在校研究生快速找到所需信息与办事入口。">
+<meta name="keywords" content="西南林业大学研究生处,西南林业大学研究生,研究生招生,研究生培养,学位管理,导师队伍,学科建设">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --green-900:#123a26;
+  --green-700:#1c5c3a;
+  --green-600:#237049;
+  --green-500:#2f8a58;
+  --green-100:#e6f2ea;
+  --green-50:#f3f9f5;
+  --ink:#1d2a23;
+  --ink-soft:#4a5a51;
+  --line:#dbe6de;
+  --bg:#f6f8f6;
+  --white:#ffffff;
+  --amber:#b8860b;
+  --radius:10px;
+  --shadow:0 2px 10px rgba(18,58,38,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:var(--green-700);text-decoration:none;}
+a:hover{color:var(--green-500);text-decoration:underline;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 18px;}
+
+/* 顶部信息条 */
+.topbar{
+  background:var(--green-900);
+  color:#cfe3d6;
+  font-size:13px;
+}
+.topbar .container{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:6px;min-height:38px;
+}
+.topbar span{opacity:.9;}
+.topbar a{color:#e8f3ec;}
+.topbar a:hover{color:#fff;}
+
+/* 页眉 */
+header.site-header{
+  background:var(--white);
+  border-bottom:3px solid var(--green-600);
+  box-shadow:var(--shadow);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:18px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-mark{
+  width:54px;height:54px;flex:0 0 54px;border-radius:50%;
+  background:linear-gradient(140deg,var(--green-600),var(--green-900));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:17px;letter-spacing:1px;
+}
+.brand-text h1{
+  font-size:22px;line-height:1.3;color:var(--green-900);font-weight:700;
+}
+.brand-text p{
+  font-size:13px;color:var(--ink-soft);letter-spacing:.5px;
+}
+.header-contact{
+  font-size:13px;color:var(--ink-soft);text-align:right;line-height:1.9;
+}
+.header-contact strong{color:var(--green-700);}
+
+/* 导航 */
+nav.main-nav{
+  background:var(--green-700);
+}
+nav.main-nav ul{
+  display:flex;flex-wrap:wrap;gap:2px;
+}
+nav.main-nav a{
+  display:block;color:#eaf5ee;font-size:15px;
+  padding:13px 18px;
+}
+nav.main-nav a:hover,nav.main-nav a.active{
+  background:var(--green-900);color:#fff;text-decoration:none;
+}
+
+/* 首屏 */
+.hero{
+  background:linear-gradient(160deg,var(--green-900) 0%,var(--green-700) 55%,var(--green-600) 100%);
+  color:#eaf5ee;
+  padding:46px 0 40px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:36px;align-items:start;
+}
+.hero h2{
+  font-size:30px;line-height:1.4;color:#fff;margin-bottom:16px;font-weight:700;
+}
+.hero p.lead{
+  font-size:16px;color:#d8ebdf;margin-bottom:22px;max-width:640px;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.hero-tags span{
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.28);
+  padding:5px 13px;border-radius:20px;font-size:13px;color:#eaf5ee;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.btn{
+  display:inline-block;padding:11px 24px;border-radius:6px;
+  font-size:15px;font-weight:600;transition:.2s;
+}
+.btn-primary{background:#f0c14b;color:#3a2c00;}
+.btn-primary:hover{background:#ffd76a;color:#3a2c00;text-decoration:none;}
+.btn-ghost{border:1px solid rgba(255,255,255,.55);color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;}
+
+.hero-panel{
+  background:rgba(255,255,255,.97);
+  border-radius:var(--radius);
+  padding:22px 22px 18px;
+  color:var(--ink);
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+.hero-panel h3{
+  font-size:16px;color:var(--green-900);
+  border-left:4px solid var(--green-600);
+  padding-left:10px;margin-bottom:14px;
+}
+.quick-list li{
+  border-bottom:1px dashed var(--line);
+  padding:9px 0;font-size:14px;
+}
+.quick-list li:last-child{border-bottom:none;}
+.quick-list a{display:flex;justify-content:space-between;gap:10px;}
+.quick-list a::after{content:"›";color:var(--green-500);font-weight:700;}
+
+/* 通用区块 */
+section.block{padding:46px 0;}
+section.block.alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:16px;margin-bottom:26px;flex-wrap:wrap;
+}
+.section-head h2{
+  font-size:23px;color:var(--green-900);position:relative;padding-left:14px;
+}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;
+  border-radius:3px;background:var(--green-600);
+}
+.section-head p{font-size:14px;color:var(--ink-soft);max-width:660px;}
+
+/* 卡片网格 */
+.grid{display:grid;gap:20px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px 20px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(18,58,38,.12);}
+.card h3{
+  font-size:17px;color:var(--green-900);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.card h3 .dot{
+  width:9px;height:9px;border-radius:50%;background:var(--green-500);flex:0 0 9px;
+}
+.card p{font-size:14px;color:var(--ink-soft);margin-bottom:12px;}
+.card ul li{
+  font-size:14px;color:var(--ink-soft);padding:5px 0 5px 16px;position:relative;
+}
+.card ul li::before{
+  content:"";position:absolute;left:0;top:13px;
+  width:6px;height:6px;border-radius:1px;background:var(--green-500);
+}
+.card .more{font-size:13px;font-weight:600;}
+
+/* 招生流程 */
+.steps{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:step;
+}
+.step{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 16px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:counter(step);
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--green-100);color:var(--green-700);
+  font-weight:700;font-size:14px;margin-bottom:10px;
+}
+.step h4{font-size:15px;color:var(--green-900);margin-bottom:8px;}
+.step p{font-size:13px;color:var(--ink-soft);}
+
+/* 通知列表 */
+.notice-wrap{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;}
+.notice-list li{
+  display:flex;gap:14px;align-items:baseline;
+  padding:13px 0;border-bottom:1px dashed var(--line);
+}
+.notice-list li:last-child{border-bottom:none;}
+.notice-list .date{
+  flex:0 0 88px;font-size:13px;color:var(--green-600);font-weight:600;
+}
+.notice-list .title{font-size:15px;color:var(--ink);}
+.notice-list .title:hover{color:var(--green-600);}
+.notice-list .tag{
+  font-size:12px;color:var(--green-700);background:var(--green-50);
+  border:1px solid var(--green-100);border-radius:3px;
+  padding:1px 7px;margin-left:8px;white-space:nowrap;
+}
+.aside-box{
+  background:var(--green-50);border:1px solid var(--green-100);
+  border-radius:var(--radius);padding:20px;
+}
+.aside-box h3{
+  font-size:16px;color:var(--green-900);margin-bottom:12px;
+  padding-bottom:10px;border-bottom:1px solid var(--green-100);
+}
+.aside-box ol{padding-left:20px;color:var(--ink-soft);font-size:14px;}
+.aside-box ol li{padding:5px 0;}
+
+/* 学科方向 */
+.disc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.disc{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;border-top:3px solid var(--green-600);
+}
+.disc h4{font-size:15px;color:var(--green-900);margin-bottom:8px;}
+.disc p{font-size:13px;color:var(--ink-soft);}
+
+/* 办事指南表格 */
+.table-wrap{overflow-x:auto;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);}
+table{width:100%;border-collapse:collapse;min-width:620px;}
+th,td{padding:13px 16px;text-align:left;font-size:14px;border-bottom:1px solid var(--line);}
+th{background:var(--green-50);color:var(--green-900);font-weight:600;white-space:nowrap;}
+td{color:var(--ink-soft);}
+tr:last-child td{border-bottom:none;}
+
+/* FAQ */
+.faq-item{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;margin-bottom:12px;
+}
+.faq-item h3{font-size:16px;color:var(--green-900);margin-bottom:8px;}
+.faq-item p{font-size:14px;color:var(--ink-soft);}
+
+/* 页脚 */
+footer.site-footer{
+  background:var(--green-900);color:#c6dccf;margin-top:10px;
+  padding:40px 0 22px;font-size:14px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px;
+  padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.14);
+}
+.footer-grid h4{color:#fff;font-size:15px;margin-bottom:12px;}
+.footer-grid li{padding:4px 0;}
+.footer-grid a{color:#c6dccf;}
+.footer-grid a:hover{color:#fff;}
+.footer-bottom{
+  padding-top:18px;display:flex;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;font-size:13px;color:#9fbfa9;
+}
+
+/* 响应式 */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;}
+  .grid-4{grid-template-columns:repeat(2,1fr);}
+  .disc-grid{grid-template-columns:repeat(2,1fr);}
+  .steps{grid-template-columns:repeat(3,1fr);}
+  .notice-wrap{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:720px){
+  .header-inner{flex-direction:column;align-items:flex-start;}
+  .header-contact{text-align:left;}
+  nav.main-nav ul{overflow-x:auto;flex-wrap:nowrap;}
+  nav.main-nav a{white-space:nowrap;padding:12px 14px;}
+  .hero h2{font-size:23px;}
+  .grid-3,.grid-2,.grid-4{grid-template-columns:1fr;}
+  .disc-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .section-head{flex-direction:column;align-items:flex-start;}
+  .notice-list li{flex-wrap:wrap;gap:6px;}
+  .notice-list .date{flex:0 0 auto;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>西南林业大学研究生处 · 信息服务平台</span>
+    <span><a href="#guide">办事指南</a> ｜ <a href="#faq">常见问题</a> ｜ <a href="#contact">联系方式</a></span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="brand-mark">西林</div>
+      <div class="brand-text">
+        <h1>西南林业大学研究生处</h1>
+        <p>招生 · 培养 · 学位 · 导师 · 学科建设</p>
+      </div>
+    </div>
+    <div class="header-contact">
+      <div><strong>办公地址：</strong>云南省昆明市盘龙区白龙寺校区</div>
+      <div><strong>咨询方式：</strong>以研究生处及各学院官方公布渠道为准</div>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="container">
+    <ul>
+      <li><a href="#overview" class="active">研究生处概况</a></li>
+      <li><a href="#admission">招生工作</a></li>
+      <li><a href="#training">培养管理</a></li>
+      <li><a href="#degree">学位工作</a></li>
+      <li><a href="#discipline">学科与导师</a></li>
+      <li><a href="#guide">办事指南</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h2>研究生教育全流程信息，从报考到毕业一处查清</h2>
+        <p class="lead">
+          西南林业大学研究生处承担学校研究生招生、培养、学位与学科建设等管理与服务工作。
+          本页面围绕考生和在校研究生最常查询的内容，梳理招生报考、培养环节、学位申请、
+          导师与学科方向以及日常办事流程，帮助你快速定位所需信息。
+        </p>
+        <div class="hero-tags">
+          <span>硕士招生</span>
+          <span>博士招生</span>
+          <span>培养方案</span>
+          <span>学位申请</span>
+          <span>导师队伍</span>
+          <span>林学与生态特色</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#admission">查看招生信息</a>
+          <a class="btn btn-ghost" href="#guide">办事流程指引</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <h3>常用入口速览</h3>
+        <ul class="quick-list">
+          <li><a href="#admission">硕士研究生报考条件</a></li>
+          <li><a href="#admission">网上报名与确认流程</a></li>
+          <li><a href="#training">培养计划与课程学习</a></li>
+          <li><a href="#degree">学位论文与答辩要求</a></li>
+          <li><a href="#discipline">学科方向与导师查询</a></li>
+          <li><a href="#guide">学籍与证明办理</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 概况 -->
+  <section class="block" id="overview">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>研究生处概况与主要职能</h2>
+          <p>研究生处是学校研究生教育管理的职能部门，工作贯穿招生、培养、学位、学科建设与质量保障各个环节。</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3><span class="dot"></span>招生管理</h3>
+          <p>组织研究生招生宣传、报名、命题、考试、复试录取等工作，负责招生章程、专业目录与相关政策的发布与解释。</p>
+          <ul>
+            <li>招生简章与专业目录发布</li>
+            <li>报名、确认与初试组织</li>
+            <li>复试录取与调剂安排</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>培养管理</h3>
+          <p>负责研究生培养方案制定与执行、课程教学、中期考核、实践环节以及学籍与日常教学运行管理。</p>
+          <ul>
+            <li>培养方案与教学计划</li>
+            <li>课程学习与成绩管理</li>
+            <li>中期考核与学术活动</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>学位与学科</h3>
+          <p>组织学位申请与授予、论文评审与答辩管理，推进学位点建设、导师队伍管理与学科发展规划。</p>
+          <ul>
+            <li>学位申请与论文送审</li>
+            <li>答辩组织与学位授予</li>
+            <li>导师遴选与学科建设</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 招生 -->
+  <section class="block alt" id="admission">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>研究生招生工作</h2>
+          <p>招生信息以学校研究生处及各招生学院当年发布的正式文件为准，报考前请务必逐条核对最新要求。</p>
+        </div>
+      </div>
+
+      <div class="steps" style="margin-bottom:34px;">
+        <div class="step">
+          <h4>了解政策</h4>
+          <p>查阅当年招生简章、专业目录与考试大纲，确认报考条件与考试科目。</p>
+        </div>
+        <div class="step">
+          <h4>网上报名</h4>
+          <p>在规定时间内完成网上报名，如实填写个人信息与报考志愿。</p>
+        </div>
+        <div class="step">
+          <h4>信息确认</h4>
+          <p>按报考点要求完成网上确认或现场确认，核对报名信息。</p>
+        </div>
+        <div class="step">
+          <h4>初试复试</h4>
+          <p>参加初试，达到要求的考生按通知参加复试与相关考核。</p>
+        </div>
+        <div class="step">
+          <h4>录取入学</h4>
+          <p>拟录取公示无异议后，按通知办理录取与入学手续。</p>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3><span class="dot"></span>硕士研究生招生</h3>
+          <p>面向符合条件的应届本科毕业生、往届毕业生及同等学力人员，按学术学位与专业学位分类招生。</p>
+          <ul>
+            <li>报考条件与学历要求以当年简章为准</li>
+            <li>初试科目分为公共课与专业课</li>
+            <li>复试一般包括专业考核、外语能力与综合素质考察</li>
+            <li>部分专业对工作年限或前置专业有特定要求</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>博士研究生招生</h3>
+          <p>博士招生方式与选拔程序按学校当年公布的办法执行，考生需关注申请条件、材料提交与考核安排。</p>
+          <ul>
+            <li>关注招生方式与报考时间节点</li>
+            <li>按要求准备申请材料与专家推荐</li>
+            <li>考核环节通常包含综合面试与专业能力评价</li>
+            <li>录取结果以官方公示信息为准</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="notice-wrap" style="margin-top:30px;">
+        <div>
+          <h3 style="font-size:18px;color:var(--green-900);margin-bottom:6px;">招生信息发布要点</h3>
+          <ul class="notice-list">
+            <li>
+              <span class="date">时间节点</span>
+              <span class="title">招生简章与专业目录一般在招生年度前一年集中发布<span class="tag">必读</span></span>
+            </li>
+            <li>
+              <span class="date">报考条件</span>
+              <span class="title">学历、学位、专业背景与工作年限要求需逐项核对<span class="tag">重点</span></span>
+            </li>
+            <li>
+              <span class="date">考试科目</span>
+              <span class="title">初试科目与参考范围以当年考试大纲为准<span class="tag">备考</span></span>
+            </li>
+            <li>
+              <span class="date">复试录取</span>
+              <span class="title">复试名单、办法与拟录取结果均通过官方渠道公示<span class="tag">公示</span></span>
+            </li>
+            <li>
+              <span class="date">调剂信息</span>
+              <span class="title">调剂缺额与要求随招生进度动态更新，需及时关注<span class="tag">动态</span></span>
+            </li>
+          </ul>
+        </div>
+        <aside class="aside-box">
+          <h3>报考准备清单</h3>
+          <ol>
+            <li>确认自身是否符合报考条件</li>
+            <li>选定报考专业与研究方向</li>
+            <li>核对考试科目与参考范围</li>
+            <li>准备报名所需证件与材料</li>
+            <li>牢记报名、确认与考试时间</li>
+            <li>保存官方通知页面以便复核</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 培养 -->
+  <section class="block" id="training">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>研究生培养管理</h2>
+          <p>培养环节围绕课程学习、科研训练、实践能力与中期考核展开，各学科具体要求以本专业培养方案为准。</p>
+        </div>
+      </div>
+      <div class="grid grid-4">
+        <article class="card">
+          <h3><span class="dot"></span>培养方案</h3>
+          <p>明确培养目标、研究方向、课程设置、学分要求与学位论文标准，是研究生阶段学习的总体依据。</p>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>课程与学分</h3>
+          <p>按培养方案选修公共课、专业基础课与选修课，完成规定学分并通过考核。</p>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>中期考核</h3>
+          <p>对课程学习、科研进展与综合表现进行评估，是进入学位论文阶段的重要环节。</p>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>实践与学术</h3>
+          <p>包含专业实践、学术报告、文献阅读等要求，注重科研能力与实际问题解决能力培养。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学位 -->
+  <section class="block alt" id="degree">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>学位申请与论文管理</h2>
+          <p>学位申请需满足课程、学分、成果与论文等各项条件，流程通常包括预审、查重、送审、答辩与学位评定。</p>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3><span class="dot"></span>申请前准备</h3>
+          <ul>
+            <li>完成培养方案规定的课程与学分</li>
+            <li>通过中期考核与开题环节</li>
+            <li>满足本学科对科研成果的要求</li>
+            <li>论文格式符合学校规范</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>论文评审</h3>
+          <ul>
+            <li>按要求进行学术不端检测</li>
+            <li>提交论文送同行专家评审</li>
+            <li>根据评审意见修改完善</li>
+            <li>评审结果决定是否进入答辩</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3><span class="dot"></span>答辩与授予</h3>
+          <ul>
+            <li>按通知组建答辩委员会</li>
+            <li>公开举行学位论文答辩</li>
+            <li>答辩通过后提交学位申请材料</li>
+            <li>经学位评定程序后授予学位</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学科与导师 -->
+  <section class="block" id="discipline">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>学科方向与导师队伍</h2>
+          <p>学校以林业、生态及相关学科为特色，多学科协调发展。具体招生专业、研究方向与导师信息以当年公布内容为准。</p>
+        </div>
+      </div>
+      <div class="disc-grid">
+        <div class="disc">
+          <h4>林学相关方向</h4>
+          <p>围绕森林培育、森林保护、林木遗传育种等方向开展科研与人才培养。</p>
+        </div>
+        <div class="disc">
+          <h4>生态与环境</h4>
+          <p>关注生态系统保护、恢复与监测，以及生态环境评价与治理相关问题。</p>
+        </div>
+        <div class="disc">
+          <h4>园林与风景</h4>
+          <p>涵盖园林植物、景观规划与设计等方向，注重理论与实践结合。</p>
+        </div>
+        <div class="disc">
+          <h4>材料与工程</h4>
+          <p>涉及木材科学、林产化工与相关工程技术领域的研究与应用。</p>
+        </div>
+        <div class="disc">
+          <h4>经济与管理</h4>
+          <p>面向林业经济、资源管理与相关产业发展的研究与决策支持。</p>
+        </div>
+        <div class="disc">
+          <h4>生物与食品</h4>
+          <p>围绕生物资源利用、食品科学与相关技术方向开展研究与培养。</p>
+        </div>
+        <div class="disc">
+          <h4>信息与工程</h4>
+          <p>结合信息技术与工程应用，服务林业及相关行业的数字化需求。</p>
+        </div>
+        <div class="disc">
+          <h4>导师查询</h4>
+          <p>可通过研究生处与各学院发布的导师信息了解研究方向与指导领域。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 办事指南 -->
+  <section class="block alt" id="guide">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>常见办事事项指引</h2>
+          <p>以下为研究生阶段常见事项的一般性说明，具体材料、办理地点与时限请以研究生处或所在学院的最新通知为准。</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>事项</th>
+              <th>适用对象</th>
+              <th>一般所需材料</th>
+              <th>办理提示</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>学籍证明</td>
+              <td>在校研究生</td>
+              <td>本人有效证件、申请表</td>
+              <td>提前确认用途与格式要求</td>
+            </tr>
+            <tr>
+              <td>成绩单打印</td>
+              <td>在校生、毕业生</td>
+              <td>本人有效证件</td>
+              <td>核对课程与学分是否完整</td>
+            </tr>
+            <tr>
+              <td>休学与复学</td>
+              <td>在校研究生</td>
+              <td>申请表、相关说明材料</td>
+              <td>注意学籍年限与审批时限</td>
+            </tr>
+            <tr>
+              <td>开题与中期</td>
+              <td>在校研究生</td>
+              <td>开题报告、中期考核表</td>
+              <td>按培养方案时间节点推进</td>
+            </tr>
+            <tr>
+              <td>学位申请</td>
+              <td>拟毕业研究生</td>
+              <td>学位申请表、论文及相关成果</td>
+              <td>关注送审与答辩时间安排</td>
+            </tr>
+            <tr>
+              <td>毕业离校</td>
+              <td>应届毕业生</td>
+              <td>离校手续单等</td>
+              <td>按学院通知逐项办理</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>以下问题整理自考生与在校研究生较常关注的内容，仅作一般性参考。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3>报考西南林业大学研究生需要满足哪些基本条件？</h3>
+        <p>基本条件通常涉及国籍、政治素质、身体健康状况以及学历学位等方面，不同专业和学位类型可能有附加要求。请以当年发布的招生简章和专业目录为准，逐条核对后再报名。</p>
+      </div>
+      <div class="faq-item">
+        <h3>招生简章和专业目录在哪里查看？</h3>
+        <p>招生简章、专业目录、考试大纲及复试办法等信息，一般通过学校研究生处官方渠道及中国研究生招生信息网发布，建议以官方发布内容为唯一依据。</p>
+      </div>
+      <div class="faq-item">
+        <h3>同等学力考生报考有什么需要注意的？</h3>
+        <p>同等学力人员报考通常会有额外的条件或加试要求，例如课程成绩、科研成果或专业限制等。此类要求各专业差异较大，务必在报考前确认清楚。</p>
+      </div>
+      <div class="faq-item">
+        <h3>研究生培养方案在哪里获取？</h3>
+        <p>培养方案一般由各学科专业制定，可通过所在学院或研究生处了解。入学后应尽早熟悉本专业的课程设置、学分要求和学位论文标准。</p>
+      </div>
+      <div class="faq-item">
+        <h3>学位论文答辩前需要完成哪些环节？</h3>
+        <p>通常包括完成课程与学分、通过中期考核、完成论文撰写、学术不端检测、专家评审等环节，评审通过后方可进入答辩程序。具体顺序与要求以本学科规定为准。</p>
+      </div>
+      <div class="faq-item">
+        <h3>如何了解导师的研究方向？</h3>
+        <p>可通过研究生处与各学院公布的导师信息了解研究方向、在研课题与指导领域。选择导师时建议结合自身研究兴趣与专业基础综合考虑。</p>
+      </div>
+      <div class="faq-item">
+        <h3>在校期间办理各类证明需要多长时间？</h3>
+        <p>办理时限因事项类型和审核环节不同而有所差异。建议提前规划，留出充足时间，并在办理前确认所需材料是否齐全。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>西南林业大学研究生处</h4>
+        <p style="color:#c6dccf;font-size:14px;">
+          服务学校研究生招生、培养、学位与学科建设工作，
+          为考生和在校研究生提供清晰、准确的信息指引。
+        </p>
+      </div>
+      <div>
+        <h4>招生相关</h4>
+        <ul>
+          <li><a href="#admission">招生简章与专业目录</a></li>
+          <li><a href="#admission">报考条件说明</a></li>
+          <li><a href="#admission">复试与调剂信息</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>培养与学位</h4>
+        <ul>
+          <li><a href="#training">培养方案与课程</a></li>
+          <li><a href="#degree">学位申请流程</a></li>
+          <li><a href="#discipline">学科与导师信息</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>服务与帮助</h4>
+        <ul>
+          <li><a href="#guide">办事事项指引</a></li>
+          <li><a href="#faq">常见问题解答</a></li>
+          <li><a href="#overview">研究生处职能</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本页面为信息指引类页面，具体政策、时间与要求请以学校研究生处及各学院官方发布为准。</span>
+      <span>西南林业大学研究生处 · 信息服务平台</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('nav.main-nav a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(){
+      for (var j = 0; j < links.length; j++) {
+        links[j].classList.remove('active');
+      }
+      this.classList.add('active');
+    });
+  }
+})();
+</script>
+
+</body>
+  </html>
