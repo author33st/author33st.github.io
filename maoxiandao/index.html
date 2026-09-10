@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冒险岛4攻略 - 流程关卡、职业养成与通关技巧指南</title>
+<meta name="description" content="冒险岛4攻略专题，整理冒险岛4的关卡流程、职业与技能加点思路、装备强化、BOSS打法与常见卡关问题，帮助玩家理清推进节奏与养成方向。">
+<meta name="keywords" content="冒险岛4攻略,冒险岛4,关卡流程,职业加点,装备强化,BOSS打法,通关技巧">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --ink:#1d2433;
+  --ink-soft:#4a5568;
+  --line:#e2e6ef;
+  --bg:#f5f7fc;
+  --card:#ffffff;
+  --brand:#2f6df6;
+  --brand-deep:#1b47b8;
+  --accent:#ff8a3d;
+  --accent-soft:#fff1e5;
+  --mint:#12b886;
+  --mint-soft:#e6f8f1;
+  --radius:14px;
+  --shadow:0 6px 22px rgba(31,52,102,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px;}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;height:66px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--brand),#6ea0ff);
+  color:#fff;display:grid;place-items:center;font-size:16px;font-weight:800;
+  box-shadow:0 4px 12px rgba(47,109,246,.35);
+}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--ink-soft);letter-spacing:1px;}
+.main-nav{display:flex;gap:6px;flex-wrap:wrap;}
+.main-nav a{
+  padding:8px 14px;border-radius:9px;font-size:14.5px;color:var(--ink-soft);
+  transition:.2s;
+}
+.main-nav a:hover{background:#eef3ff;color:var(--brand-deep);}
+.nav-toggle{
+  display:none;border:1px solid var(--line);background:#fff;border-radius:9px;
+  padding:7px 12px;font-size:14px;color:var(--ink-soft);cursor:pointer;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(900px 380px at 12% -10%,rgba(47,109,246,.16),transparent 60%),
+    radial-gradient(700px 320px at 92% 0%,rgba(255,138,61,.16),transparent 62%),
+    #ffffff;
+  border-bottom:1px solid var(--line);
+  padding:52px 0 46px;
+}
+.hero-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:40px;align-items:start;}
+.hero h1{
+  font-size:34px;line-height:1.32;letter-spacing:.4px;margin-bottom:14px;
+}
+.hero h1 em{font-style:normal;color:var(--brand);}
+.hero-lead{color:var(--ink-soft);font-size:16.5px;margin-bottom:22px;max-width:640px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px;}
+.hero-tags span{
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:5px 13px;font-size:13px;color:var(--ink-soft);
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:10px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(47,109,246,.3);}
+.btn-primary:hover{background:var(--brand-deep);}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink);}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand-deep);}
+
+.hero-panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow);
+}
+.hero-panel h2{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.hero-panel h2::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--accent);}
+.step-list{list-style:none;display:grid;gap:12px;}
+.step-list li{display:flex;gap:11px;font-size:14.5px;color:var(--ink-soft);}
+.step-num{
+  flex:0 0 24px;height:24px;border-radius:50%;
+  background:#eef3ff;color:var(--brand-deep);font-size:12.5px;font-weight:700;
+  display:grid;place-items:center;margin-top:2px;
+}
+.step-list strong{color:var(--ink);}
+
+/* ---------- section base ---------- */
+section{padding:52px 0;}
+.section-head{margin-bottom:28px;}
+.section-head h2{font-size:25px;letter-spacing:.3px;margin-bottom:8px;}
+.section-head p{color:var(--ink-soft);font-size:15px;max-width:760px;}
+.eyebrow{
+  display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1.5px;
+  color:var(--brand);text-transform:uppercase;margin-bottom:8px;
+}
+
+/* ---------- 流程 timeline ---------- */
+.timeline{display:grid;gap:16px;}
+.tl-item{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:18px;
+  box-shadow:var(--shadow);
+}
+.tl-badge{
+  width:52px;height:52px;border-radius:12px;flex:0 0 52px;
+  background:linear-gradient(135deg,#eef3ff,#dbe6ff);
+  color:var(--brand-deep);font-weight:800;font-size:15px;
+  display:grid;place-items:center;text-align:center;line-height:1.15;
+}
+.tl-item h3{font-size:17px;margin-bottom:6px;}
+.tl-item p{font-size:14.8px;color:var(--ink-soft);}
+.tl-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px;}
+.tl-meta span{
+  font-size:12.5px;background:var(--mint-soft);color:#0b7a5c;
+  border-radius:6px;padding:3px 9px;
+}
+
+/* ---------- 职业卡片 ---------- */
+.job-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.job-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;
+  transition:.22s;
+}
+.job-card:hover{transform:translateY(-3px);border-color:#c9d8ff;}
+.job-card h3{font-size:17px;display:flex;align-items:center;gap:9px;}
+.job-dot{width:10px;height:10px;border-radius:50%;background:var(--brand);}
+.job-card p{font-size:14.6px;color:var(--ink-soft);flex:1;}
+.job-card ul{list-style:none;display:grid;gap:6px;font-size:14px;color:var(--ink-soft);}
+.job-card ul li::before{content:"·";color:var(--accent);font-weight:800;margin-right:7px;}
+
+/* ---------- 强化 / 装备 ---------- */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start;}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);
+}
+.panel h3{font-size:18px;margin-bottom:12px;}
+.panel p{font-size:15px;color:var(--ink-soft);margin-bottom:12px;}
+.check-list{list-style:none;display:grid;gap:11px;}
+.check-list li{
+  font-size:14.8px;color:var(--ink-soft);padding-left:26px;position:relative;
+}
+.check-list li::before{
+  content:"✓";position:absolute;left:0;top:0;
+  color:var(--mint);font-weight:800;
+}
+.check-list strong{color:var(--ink);}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);}
+table{width:100%;border-collapse:collapse;font-size:14.6px;min-width:520px;}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);}
+th{background:#f7f9ff;font-weight:700;color:var(--ink);font-size:14px;}
+td{color:var(--ink-soft);}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:#fafbff;}
+
+/* ---------- BOSS ---------- */
+.boss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.boss-card{
+  background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);
+}
+.boss-card h3{font-size:16.5px;margin-bottom:8px;}
+.boss-card p{font-size:14.6px;color:var(--ink-soft);}
+.boss-card .hint{
+  margin-top:10px;font-size:13.5px;background:var(--accent-soft);
+  color:#a04a0d;border-radius:8px;padding:8px 12px;
+}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;gap:12px;}
+.faq details{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 20px;box-shadow:var(--shadow);
+}
+.faq summary{
+  cursor:pointer;font-weight:600;font-size:15.6px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:"+";color:var(--brand);font-weight:800;font-size:19px;line-height:1;
+}
+.faq details[open] summary::after{content:"–";}
+.faq details p{margin-top:11px;font-size:14.8px;color:var(--ink-soft);}
+
+/* ---------- 侧栏提示 ---------- */
+.aside-note{
+  background:linear-gradient(135deg,#1f3a8a,#2f6df6);
+  color:#fff;border-radius:var(--radius);padding:26px 24px;
+}
+.aside-note h3{font-size:18px;margin-bottom:10px;}
+.aside-note p{font-size:14.8px;color:rgba(255,255,255,.86);margin-bottom:14px;}
+.aside-note ul{list-style:none;display:grid;gap:9px;font-size:14.4px;color:rgba(255,255,255,.92);}
+.aside-note ul li::before{content:"▸";margin-right:8px;color:#ffd9a8;}
+
+/* ---------- footer ---------- */
+.site-footer{
+  background:#141a28;color:#a9b4c9;padding:44px 0 26px;margin-top:20px;
+}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:28px;}
+.site-footer h4{color:#fff;font-size:15px;margin-bottom:12px;}
+.site-footer p{font-size:14px;line-height:1.8;}
+.site-footer ul{list-style:none;display:grid;gap:8px;font-size:14px;}
+.site-footer ul a:hover{color:#fff;}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:18px;
+  font-size:13px;color:#7d8899;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:29px;}
+  .job-grid{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .nav-toggle{display:block;}
+  .main-nav{
+    display:none;position:absolute;top:66px;left:0;right:0;
+    background:#fff;border-bottom:1px solid var(--line);
+    padding:12px 20px 18px;flex-direction:column;gap:4px;
+  }
+  .main-nav.open{display:flex;}
+  .main-nav a{padding:10px 12px;}
+  .hero{padding:38px 0 34px;}
+  .hero h1{font-size:25px;}
+  section{padding:40px 0;}
+  .section-head h2{font-size:21px;}
+  .job-grid{grid-template-columns:1fr;}
+  .boss-grid{grid-template-columns:1fr;}
+  .tl-item{grid-template-columns:1fr;gap:12px;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">M4</span>
+      <span>冒险岛4攻略<small>MAPLE GUIDE</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航">菜单</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#flow">流程推进</a>
+      <a href="#jobs">职业养成</a>
+      <a href="#gear">装备强化</a>
+      <a href="#boss">BOSS打法</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">关卡 · 养成 · 打法</span>
+        <h1>冒险岛4攻略：从开局推进到<em>后期通关</em>的完整思路</h1>
+        <p class="hero-lead">
+          找「冒险岛4攻略」的玩家，通常卡在三件事上：不知道主线该往哪走、技能点加错导致输出跟不上、以及打不过某个阶段性 BOSS。
+          这份攻略按推进顺序整理思路，先讲清节奏，再讲职业与装备，最后处理卡关点，方便你按需查阅而不必从头看起。
+        </p>
+        <div class="hero-tags">
+          <span>主线流程梳理</span>
+          <span>技能加点方向</span>
+          <span>装备强化取舍</span>
+          <span>阶段 BOSS 应对</span>
+          <span>卡关排查清单</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#flow">查看流程顺序</a>
+          <a class="btn btn-ghost" href="#faq">直接看常见问题</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <h2>新手最容易走偏的四步</h2>
+        <ul class="step-list">
+          <li>
+            <span class="step-num">1</span>
+            <span><strong>先跑主线再刷怪。</strong>前期等级靠任务给的经验更快，纯刷怪容易卡在等级墙前。</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span><strong>技能点别平均分。</strong>优先把一到两个主力输出技能点满，再考虑辅助与位移。</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span><strong>强化先保武器。</strong>资源有限时，武器强化带来的收益通常高于防具平均强化。</span>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <span><strong>打不过先看抗性。</strong>很多卡关不是伤害不够，而是被属性攻击或异常状态反复打断。</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 流程 -->
+  <section id="flow">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">推进节奏</span>
+        <h2>主线流程与阶段目标</h2>
+        <p>不同版本、不同职业的细节会有差异，但整体推进逻辑相近：以主线任务为主线，用副本和日常补等级与材料。下面按阶段说明每个时期该优先做什么。</p>
+      </div>
+
+      <div class="timeline">
+        <article class="tl-item">
+          <div class="tl-badge">开局<br>1–30</div>
+          <div>
+            <h3>熟悉操作与基础任务链</h3>
+            <p>这一阶段的目标不是变强，而是把操作、地图传送和任务追踪跑熟。跟着新手任务链走，基本能自然升到可以转职的等级，不需要刻意刷怪。遇到需要收集道具的任务，顺手把同地图的支线一起接掉，能省下大量往返时间。</p>
+            <div class="tl-meta"><span>跟着任务走</span><span>顺手接支线</span><span>熟悉技能手感</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-badge">成长<br>30–70</div>
+          <div>
+            <h3>确定输出循环，补齐位移与生存</h3>
+            <p>转职后技能体系成型，此时要做的第一件事是把技能栏排顺手：一个清怪技能、一个单体技能、一个位移、一个保命。经验来源可以转向重复性副本与日常任务，同时开始有意识地积累强化材料，不要全部消耗在过渡装备上。</p>
+            <div class="tl-meta"><span>固定技能循环</span><span>日常副本</span><span>攒材料</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-badge">成型<br>70–120</div>
+          <div>
+            <h3>装备换代与属性补齐</h3>
+            <p>这个阶段等级提升速度会明显放缓，收益更多来自装备与属性搭配。建议先把武器和主属性装备换到当前等级段可用的一档，再考虑附加属性。命中、暴击、抗性这类容易被忽略的属性，往往决定了你能否稳定打过阶段性 BOSS。</p>
+            <div class="tl-meta"><span>换武器优先</span><span>补命中暴击</span><span>看抗性</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item">
+          <div class="tl-badge">后期<br>120+</div>
+          <div>
+            <h3>围绕 BOSS 反向调整配置</h3>
+            <p>进入后期，推进速度取决于能否稳定通关关键 BOSS。此时更有效的做法是「反向配置」：先看目标 BOSS 的攻击模式和属性，再决定需要堆什么抗性、带什么消耗品、用哪套技能循环，而不是一味堆面板数值。</p>
+            <div class="tl-meta"><span>反向配装</span><span>练躲避节奏</span><span>备消耗品</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 职业 -->
+  <section id="jobs" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">职业养成</span>
+        <h2>职业定位与加点方向</h2>
+        <p>职业选择没有绝对强弱，更多取决于你习惯近身缠斗还是远程拉扯。下面按常见定位说明各自的养成重点，加点请以你所在版本的实际技能说明为准。</p>
+      </div>
+
+      <div class="job-grid">
+        <article class="job-card">
+          <h3><span class="job-dot"></span>近战输出型</h3>
+          <p>贴脸打伤害，清怪效率高，但对走位和保命技能依赖较大。适合喜欢主动进攻、能接受频繁调整站位的玩家。</p>
+          <ul>
+            <li>加点优先：主攻技能 → 位移 → 减伤</li>
+            <li>属性侧重：力量类主属性、暴击</li>
+            <li>注意：被击退会打断连招，抗性别省</li>
+          </ul>
+        </article>
+
+        <article class="job-card">
+          <h3><span class="job-dot" style="background:var(--accent)"></span>远程消耗型</h3>
+          <p>靠距离和持续输出压制对手，容错相对高，但面对快速突进的敌人需要提前规划退路。</p>
+          <ul>
+            <li>加点优先：主攻技能 → 控制/减速 → 位移</li>
+            <li>属性侧重：敏捷类主属性、命中</li>
+            <li>注意：命中不足时伤害会明显打折</li>
+          </ul>
+        </article>
+
+        <article class="job-card">
+          <h3><span class="job-dot" style="background:var(--mint)"></span>辅助与增益型</h3>
+          <p>自身输出不算突出，但能显著提升队伍或自身的续航与稳定性，适合耐心推进、不喜欢硬拼的玩家。</p>
+          <ul>
+            <li>加点优先：核心增益 → 治疗/护盾 → 输出</li>
+            <li>属性侧重：智力类主属性、抗性</li>
+            <li>注意：单人推进速度偏慢，靠装备补效率</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 装备强化 -->
+  <section id="gear">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">装备与资源</span>
+        <h2>强化取舍：把资源花在收益最高的地方</h2>
+        <p>强化资源永远是紧张的，关键在于判断哪一件装备值得投入。下面给出通用的判断顺序，具体数值请以游戏内实际显示为准。</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3>资源投入的优先顺序</h3>
+          <p>先解决「能不能打得动」，再解决「能不能扛得住」，最后才考虑锦上添花的附加属性。</p>
+          <ul class="check-list">
+            <li><strong>武器第一优先。</strong>武器强化直接影响所有输出技能，收益最直观。</li>
+            <li><strong>主属性装备第二。</strong>提升主属性的部位优先于纯防御部位。</li>
+            <li><strong>防具按缺口补。</strong>如果经常被秒，再回头补防具与抗性。</li>
+            <li><strong>过渡装备别深投。</strong>等级段即将淘汰的装备，强化到够用即可。</li>
+            <li><strong>消耗品常备。</strong>恢复药、解异常道具在 BOSS 战中往往比多强化一级更实用。</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>容易被忽略的属性</h3>
+          <p>面板数值好看不等于实战顺畅，以下几项经常是卡关的真正原因。</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>属性</th><th>作用</th><th>什么时候该补</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>命中</td><td>决定攻击是否生效</td><td>打同级怪频繁出现未命中时</td></tr>
+                <tr><td>暴击</td><td>提升爆发上限</td><td>输出稳定但打不动 BOSS 时</td></tr>
+                <tr><td>抗性</td><td>减少属性伤害与异常</td><td>被特定属性攻击反复压制时</td></tr>
+                <tr><td>移动/位移</td><td>影响躲避与走图效率</td><td>躲避技能总是慢半拍时</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOSS -->
+  <section id="boss" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">实战打法</span>
+        <h2>阶段 BOSS 的通用应对思路</h2>
+        <p>不同 BOSS 的技能组合各不相同，但应对框架是共通的：先观察，再找输出窗口，最后才是拼伤害。下面按常见类型归纳。</p>
+      </div>
+
+      <div class="boss-grid">
+        <article class="boss-card">
+          <h3>高爆发型</h3>
+          <p>技能前摇明显但伤害极高，被连续命中很容易直接倒地。应对重点是记住前摇动作，提前离开技能范围，而不是硬吃一下换输出。</p>
+          <div class="hint">提示：先练两三轮只躲不打，把技能节奏记熟再开始输出。</div>
+        </article>
+
+        <article class="boss-card">
+          <h3>持续消耗型</h3>
+          <p>单次伤害不高，但会叠加异常状态或持续掉血，拖久了反而更危险。需要带足解除异常的道具，并尽量缩短战斗时间。</p>
+          <div class="hint">提示：把爆发技能留到异常叠加前使用，避免被慢慢磨死。</div>
+        </article>
+
+        <article class="boss-card">
+          <h3>召唤与分身型</h3>
+          <p>本体与召唤物同时存在，容易被打断输出节奏。优先清理会干扰走位的小怪，再集中处理本体。</p>
+          <div class="hint">提示：范围清怪技能在这里的价值高于单体高伤技能。</div>
+        </article>
+
+        <article class="boss-card">
+          <h3>机制解谜型</h3>
+          <p>需要按顺序触发机关、躲避指定区域或完成特定动作才能造成伤害。这类 BOSS 靠堆数值很难过关，必须先把机制走通。</p>
+          <div class="hint">提示：失败几次不丢人，先把机制流程记下来再谈输出。</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">常见问题</span>
+        <h2>冒险岛4攻略常见疑问</h2>
+        <p>以下是玩家在搜索和实际游玩中最常提出的问题，按出现频率整理。</p>
+      </div>
+
+      <div class="split">
+        <div class="faq">
+          <details open>
+            <summary>主线卡住了，应该先升级还是先做任务？</summary>
+            <p>优先确认当前任务是否只是等级不足导致无法接取。如果是，就近做日常或重复副本补几级即可；如果是任务链本身断档，检查是否有前置支线未完成。盲目刷怪通常效率最低。</p>
+          </details>
+          <details>
+            <summary>技能点加错了怎么办？</summary>
+            <p>多数版本会提供技能重置的途径，通常在特定 NPC 或商城处。如果暂时无法重置，可以先集中把剩余点数投入主力输出技能，避免继续分散，等有重置机会再统一调整。</p>
+          </details>
+          <details>
+            <summary>装备强化失败了会不会掉级？</summary>
+            <p>不同版本的强化规则差异较大，有的会降级、有的会保留等级只消耗材料。建议在强化前先查看游戏内的强化说明，或先用低价值装备测试规则，再决定是否投入主力装备。</p>
+          </details>
+          <details>
+            <summary>打 BOSS 总是被秒，是装备不够好吗？</summary>
+            <p>不一定。被秒通常有三个原因：抗性不足、没有及时躲避高伤技能、以及恢复道具没跟上。先排查这三点，再考虑是否需要提升装备等级。</p>
+          </details>
+          <details>
+            <summary>单人推进和组队推进哪个更快？</summary>
+            <p>前期单人推进节奏更自由，任务衔接顺畅；中后期面对高难度 BOSS 时，组队能明显降低容错压力。可以按阶段灵活切换，不必固定一种方式。</p>
+          </details>
+          <details>
+            <summary>攻略里的数值和我游戏里不一样，是错的吗？</summary>
+            <p>冒险岛系列版本较多，不同区服与更新阶段的技能数值、装备属性都可能不同。本页内容以通用思路为主，具体数值请以你所在版本的游戏内说明为准。</p>
+          </details>
+        </div>
+
+        <aside class="aside-note">
+          <h3>卡关时的排查顺序</h3>
+          <p>打不过某个关卡时，按下面顺序逐项检查，通常能快速定位问题所在。</p>
+          <ul>
+            <li>等级是否达到该阶段推荐区间</li>
+            <li>主力技能是否已经点满</li>
+            <li>武器是否换到当前等级段可用档位</li>
+            <li>命中与抗性是否存在明显缺口</li>
+            <li>恢复与解异常道具是否带够</li>
+            <li>BOSS 技能前摇是否已经记熟</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>关于本站</h4>
+        <p>本站为冒险岛4攻略主题的内容整理页，汇总流程推进、职业养成、装备强化与 BOSS 应对的通用思路，方便玩家按需查阅。内容以经验性建议为主，具体数值与规则请以游戏内实际说明为准。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#flow">主线流程与阶段目标</a></li>
+          <li><a href="#jobs">职业定位与加点方向</a></li>
+          <li><a href="#gear">装备强化与资源取舍</a></li>
+          <li><a href="#boss">阶段 BOSS 应对思路</a></li>
+          <li><a href="#faq">常见问题解答</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>阅读建议</h4>
+        <ul>
+          <li>按推进阶段对照查看</li>
+          <li>卡关时优先看排查清单</li>
+          <li>加点与强化以版本说明为准</li>
+          <li>遇到机制类 BOSS 先记流程</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>冒险岛4攻略 · 内容整理与经验分享</span>
+      <span>本站内容仅供参考，请以游戏内实际设定为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mainNav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        nav.classList.toggle('open');
+      });
+      nav.addEventListener('click', function(e){
+        if(e.target.tagName === 'A'){
+          nav.classList.remove('open');
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+  </html>
